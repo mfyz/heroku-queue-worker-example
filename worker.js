@@ -10,8 +10,7 @@ function sleep(ms) {
 }
 
 function start() {
-	console.log(REDIS_URL)
-	const workQueue = new Queue('work', REDIS_URL)
+	const workQueue = new Queue('amazing_work', REDIS_URL)
 	console.log('====> Queue set up...')
 	
 	workQueue.process(maxJobsPerWorker, async (job) => {
@@ -34,4 +33,3 @@ function start() {
 }
 
 throng({ workers, start })
-console.log('====> Worker started and listening...')
