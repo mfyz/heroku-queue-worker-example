@@ -13,6 +13,7 @@ function start() {
 	const workQueue = new Queue('work', REDIS_URL)
 	
 	workQueue.process(maxJobsPerWorker, async (job) => {
+		console.log('====> Job started')
 		let progress = 0
 		
 		// simulate an error 5% of the time
@@ -31,3 +32,4 @@ function start() {
 }
 
 throng({ workers, start })
+console.log('====> Worker started and listening...')
