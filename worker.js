@@ -11,6 +11,7 @@ function sleep(ms) {
 
 function start() {
 	const workQueue = new Queue('work', REDIS_URL)
+	console.log('====> Queue set up...')
 	
 	workQueue.process(maxJobsPerWorker, async (job) => {
 		console.log('====> Job started')
