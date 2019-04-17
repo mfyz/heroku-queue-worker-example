@@ -10,6 +10,7 @@ function sleep(ms) {
 }
 
 function start() {
+	console.log(REDIS_URL)
 	const workQueue = new Queue('work', REDIS_URL)
 	console.log('====> Queue set up...')
 	
